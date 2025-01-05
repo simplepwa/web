@@ -1,101 +1,155 @@
-import Image from "next/image";
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import Image from 'next/image'
+import dynamic from 'next/dynamic'
+import Link from 'next/link'
+import Navbar from './components/navbar'
+import PackageCard from './components/package-card'
+import VideoPlayer from './components/video-player'
+import AssetGenerator from './components/asset-generator'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen">
+      <Navbar />
+      
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            <div className="space-y-2">
+              <div className="flex items-center gap-1">
+                {'⭐'.repeat(5)}
+                <span className="text-white ml-2 text-xl">in need of your reviews</span>
+              </div>
+              <p className="text-white text-xl">
+                do real work and leave this to us
+              </p>
+            </div>
+            
+            <h1 className="text-6xl md:text-7xl text-white leading-none tracking-tight font-bold">
+              create <span className="magnifier">🔍</span> PWA<br />
+              in⚡minutes.
+            </h1>
+            
+            <p className="text-2xl text-gray-400 leading-relaxed">
+              Get a web apps <span className="highlight">faster.</span> Create a pwa, add package and{' '}
+              <span className="highlight">quickly </span> to thousands of{' '}
+              <span className="highlight">start</span> free from hassle.
+            </p>
+            
+            <ul className="space-y-4 text-xl">
+              <li className="flex items-center gap-4 text-gray-400">
+                <span className="text-white">✓</span> 
+                Numbers of <span className="feature-link">verified</span> package user
+              </li>
+              <li className="flex items-center gap-4 text-gray-400">
+                <span className="text-white">✓</span> 
+                5 minute <span className="feature-link">application</span> process
+              </li>
+              <li className="flex items-center gap-4 text-gray-400">
+                <span className="text-white">✓</span> 
+                <span className="feature-link">create</span> within 2 min 
+              </li>
+              <li className="flex items-center gap-4 text-gray-400">
+                <span className="text-white">✓</span> 
+                <span className="feature-link">Secure</span> and safe
+              </li>
+            </ul>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute -top-6 right-0 bg-[#ff00d4] text-white px-6 py-2.5 rounded-full text-xl font-bold flex items-center gap-2">
+              ⚡ Now up to 10x faster!
+            </div>
+            
+            <PackageCard />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+        {/* Video Showcase Section */}
+        <div className="mt-32 space-y-12" id="how-it-works">
+          <div className="text-center space-y-6">
+            <h2 className="text-6xl md:text-7xl font-bold text-white leading-none">
+              Watch the <span className="text-[#ff00d4]">magic</span> ✨
+            </h2>
+            <p className="text-2xl text-gray-400 max-w-2xl mx-auto">
+              Seriously, it's so easy you might think we're using magic tricks 🎩
+              <br />But nope, just some really cool tech! 
+            </p>
+          </div>
+
+          <VideoPlayer />
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-[#232323] p-8 rounded-xl space-y-4 transform hover:scale-105 transition-transform">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-[#ff00d4] rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold">1</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Grab the package 📦</h3>
+                  <p className="text-xl text-gray-400 mt-2">
+                    Just a quick <span className="text-[#ff00d4]">npm install</span> and you're ready!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[#232323] p-8 rounded-xl space-y-4 transform hover:scale-105 transition-transform">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-[#ff00d4] rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold">2</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Add some spice 🌶️</h3>
+                  <p className="text-xl text-gray-400 mt-2">
+                    Drop in your <span className="text-[#ff00d4]">config</span> - it's that simple!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[#232323] p-8 rounded-xl space-y-4 transform hover:scale-105 transition-transform">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-[#ff00d4] rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold">3</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Launch it 🚀</h3>
+                  <p className="text-xl text-gray-400 mt-2">
+                    Hit <span className="text-[#ff00d4]">deploy</span> and watch it fly!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center pt-8">
+            <p className="text-2xl text-gray-400 mb-8">
+              Still reading? Come on, your PWA is waiting to be born! 🐣
+            </p>
+            <button className="bg-[#ff00d4] text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-[#d600b0] transition-all transform hover:scale-105">
+              Let's create something awesome →
+            </button>
+          </div>
+
+          {/* Asset Generator Section */}
+          <div className="mt-32 space-y-12" id="asset">
+            <div className="text-center space-y-6">
+              <h2 className="text-6xl md:text-7xl font-bold text-white leading-none">
+                Need PWA <span className="text-[#ff00d4]">icons</span>? 🎯
+              </h2>
+              <p className="text-2xl text-gray-400 max-w-2xl mx-auto">
+                Don't waste time creating different sizes manually!<br />
+                Our magic wand will do it for you ✨
+              </p>
+            </div>
+
+            <AssetGenerator />
+          </div>
+        </div>
+      </div>
+    </main>
+  )
 }
+
