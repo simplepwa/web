@@ -1,39 +1,59 @@
-'use client';
+"use client"
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';  
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { motion } from "framer-motion"
 
 export default function Navbar() {
-  const [isClient, setIsClient] = useState(false);
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    setIsClient(true);
-  }, []);
+    setIsClient(true)
+  }, [])
 
   if (!isClient) {
-    return null; // Or a loading skeleton
+    return null
   }
 
   return (
-    <nav className="w-full py-5 px-8">
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full py-5 px-8"
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-2xl text-white font-bold tracking-wide">
-          PWA-SIMPle
-        </Link>
-        
-        <div className="hidden md:flex items-center gap-10">
-            <Link href="#how-it-works" className="text-lg text-gray-300 hover:text-white font-comic">
-           How it works
-             </Link>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link href="/" className="text-2xl text-white font-bold tracking-wide">
+            PWA-SIMPle
+          </Link>
+        </motion.div>
 
-          <Link href="#asset" className="text-lg text-gray-300 hover:text-white font-comic">
-            PWA-Asset
-          </Link>
-          <Link href="/knowledge" className="text-lg text-gray-300 hover:text-white font-comic">
-            package
-          </Link>
+        <div className="hidden md:flex items-center gap-10">
+          {["how-it-works", "asset", "knowledge"].map((item, index) => (
+            <motion.div
+              key={item}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Link
+                href={item === "knowledge" ? "/knowledge" : `#${item}`}
+                className="text-lg text-gray-300 hover:text-white font-comic relative group"
+              >
+                {item === "how-it-works" ? "How it works" : item === "asset" ? "PWA-Asset" : "package"}
+                <motion.span
+                  className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"
+                  initial={false}
+                  animate={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                />
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </nav>
-  );
+    </motion.nav>
+  )
 }
+

@@ -13,6 +13,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
           rel="stylesheet"
         />
+
+          <link rel="manifest" href="/manifest.json" />
+
       </head>
       <body className="font-comic bg-[#1a1a1a]">{children}</body>
     </html>
