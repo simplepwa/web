@@ -61,8 +61,11 @@ export default function Home() {
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-8 py-12">
+        {/* Hero Section */}
         <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* Left Column */}
           <motion.div className="space-y-8" variants={containerVariants}>
+            {/* Rating and Tagline */}
             <motion.div className="space-y-2" variants={itemVariants}>
               <div className="flex items-center gap-1">
                 {Array(5)
@@ -91,6 +94,7 @@ export default function Home() {
               </motion.p>
             </motion.div>
 
+            {/* Main Headline */}
             <motion.h1
               className="text-6xl md:text-7xl text-white leading-none tracking-tight font-bold"
               variants={textVariants}
@@ -116,12 +120,14 @@ export default function Home() {
               minutes.
             </motion.h1>
 
+            {/* Subheadline */}
             <motion.p className="text-2xl text-gray-400 leading-relaxed" variants={itemVariants}>
               Get a web apps <span className="highlight">faster.</span> Create a pwa, add package and{" "}
               <span className="highlight">quickly </span> to thousands of <span className="highlight">start</span> free
               from hassle.
             </motion.p>
 
+            {/* Feature List */}
             <motion.ul className="space-y-4 text-xl" variants={containerVariants}>
               {[
                 'Numbers of <span class="feature-link">verified</span> package user',
@@ -149,6 +155,7 @@ export default function Home() {
             </motion.ul>
           </motion.div>
 
+          {/* Right Column */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, y: 50 }}
@@ -188,7 +195,7 @@ export default function Home() {
               Watch the <span className="text-[#ff00d4]">magic</span> ✨
             </motion.h2>
             <motion.p className="text-2xl text-gray-400 max-w-2xl mx-auto" variants={itemVariants}>
-              Seriously, it's so easy you might think we're using magic tricks 🎩
+              Seriously, it&apos;s so easy you might think we&apos;re using magic tricks 🎩
               <br />
               But nope, just some really cool tech!
             </motion.p>
@@ -200,11 +207,11 @@ export default function Home() {
             {[
               {
                 title: "Grab the package 📦",
-                description: 'Just a quick <span class="text-[#ff00d4]">npm install</span> and you&#39;re ready!',
+                description: 'Just a quick <span class="text-[#ff00d4]">npm install</span> and you&apos;re ready!',
               },
               {
                 title: "Add some spice 🌶️",
-                description: 'Drop in your <span class="text-[#ff00d4]">config</span> - it&#39;s that simple!',
+                description: 'Drop in your <span class="text-[#ff00d4]">config</span> - it&apos;s that simple!',
               },
               {
                 title: "Launch it 🚀",
@@ -244,7 +251,7 @@ export default function Home() {
               whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(255, 0, 212, 0.5)" }}
               whileTap={{ scale: 0.95 }}
             >
-              Let's create something awesome →
+              Let&apos;s create something awesome →
             </motion.button>
           </motion.div>
 
@@ -262,7 +269,7 @@ export default function Home() {
                 Need PWA <span className="text-[#ff00d4]">icons</span>? 🎯
               </motion.h2>
               <motion.p className="text-2xl text-gray-400 max-w-2xl mx-auto" variants={itemVariants}>
-                Don't waste time creating different sizes manually!
+                Don&apos;t waste time creating different sizes manually!
                 <br />
                 Our magic wand will do it for you ✨
               </motion.p>
