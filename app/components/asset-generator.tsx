@@ -88,7 +88,7 @@ export default function AssetGenerator() {
     const zip = new JSZip()
     
     // Create assets folder
-    const assetsFolder = zip.folder("pwa-assets")
+    const assetsFolder = zip.folder("assets")
     if (!assetsFolder) return
 
     // Add icons
@@ -125,7 +125,7 @@ Generated with PWA-simple asset generator
     const url = URL.createObjectURL(content)
     const a = document.createElement('a')
     a.href = url
-    a.download = 'pwa-assets.zip'
+    a.download = 'assets.zip'
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)
