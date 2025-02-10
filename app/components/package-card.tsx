@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function PackageCard() {
   const [copied, setCopied] = useState(false)
   const [isClient, setIsClient] = useState(false)
-  const packageCommand = "npm install simple-pwa"
+  const packageCommand = "npm i -g @simplepwa/nextjs-pwa-setup"
 
   useEffect(() => {
     setIsClient(true)
