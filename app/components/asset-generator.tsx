@@ -67,22 +67,7 @@ export default function AssetGenerator() {
     setIsGenerating(false)
   }
 
-  const generateManifest = (assets: GeneratedAsset[]) => {
-    return JSON.stringify({
-      name: "Your PWA Name",
-      short_name: "PWA",
-      description: "Your Progressive Web App",
-      start_url: "/",
-      display: "standalone",
-      background_color: "#ffffff",
-      theme_color: "#000000",
-      icons: assets.map(({ size }) => ({
-        src: `/icon-${size}.png`,
-        sizes: size,
-        type: "image/png"
-      }))
-    }, null, 2)
-  }
+  
 
   const downloadPackage = async () => {
     const zip = new JSZip()
@@ -97,28 +82,10 @@ export default function AssetGenerator() {
     })
 
     // Add manifest
-    const manifest = generateManifest(assets)
-    assetsFolder.file('manifest.json', manifest)
+   
 
     // Add README
-    const readme = `# PWA Assets Package
-
-Generated with PWA-simple asset generator
-
-## Contents
-- manifest.json - Web app manifest file
-- icons/ - PWA icons in various sizes (${iconSizes.join(', ')})
-
-## Usage
-1. Copy the assets folder to your project
-2. Link the manifest in your HTML:
-   \`\`\`html
-   <link rel="manifest" href="/assets/manifest.json">
-   \`\`\`
-3. Update the manifest.json with your app details
-    `
-    
-    assetsFolder.file('README.md', readme)
+ 
 
     // Generate and download zip
     const content = await zip.generateAsync({ type: "blob" })
