@@ -39,7 +39,7 @@ export default function VideoPlayer() {
           poster="/placeholder.svg?height=720&width=1280"
           onClick={togglePlay}
         >
-          <source src="/tutorial.mp4" type="video/mp4" />
+          <source src="/1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <AnimatePresence>
