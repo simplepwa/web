@@ -77,7 +77,7 @@ export default function AssetGenerator() {
       background_color: "#ffffff",
       theme_color: "#000000",
       icons: assets.map(({ size }) => ({
-        src: `assets/icon-${size}.png`,
+        src: `/icon-${size}.png`,
         sizes: size,
         type: "image/png"
       }))
