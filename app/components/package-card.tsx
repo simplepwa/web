@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function PackageCard() {
   const [copied, setCopied] = useState(false)
   const [isClient, setIsClient] = useState(false)
-  const packageCommand = "npm install PWA-simple"
+  const packageCommand = "npm install simple-pwa"
 
   useEffect(() => {
     setIsClient(true)

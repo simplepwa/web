@@ -28,7 +28,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="/" className="text-2xl text-white font-bold tracking-wide">
-              PWA-SIMPle
+              SIMPLE-PWA
             </Link>
           </motion.div>
 
